@@ -1,0 +1,594 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+// Bulma Utilities
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+
+// Custom Variables
+$p-color: #131e41;
+$inp-color: #5e49ff;
+
+$blue: rgba(28, 0, 255, 1);
+$blue-light: rgba(28, 0, 255, .25);
+$blue-dark: rgba(28, 0, 255, .5);
+$pink-invert: #fff;
+$family-poppins: "Poppins", sans-serif;
+
+$primary: $blue;
+$primary-invert: $pink-invert;
+
+$family-primary: $family-poppins;
+
+$border: $blue-light !default;
+$border-hover: $blue-light !default;
+$border-light: $blue-light !default;
+$border-light-hover: $blue-light !default;
+
+$link: #494956 !default;
+$link-hover: $blue-dark !default;
+
+// Bulma changes
+.list {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 8px 24px !important;
+}
+
+a.list-item {
+  background-color: white !important;
+}
+
+.list-item:not(:last-child) {
+  border-bottom: 2px solid rgb(245, 244, 242) !important;
+}
+
+.label:not(:last-child) {
+  margin-bottom: 0 !important;
+}
+
+.field:not(:last-child) {
+  margin-bottom: 0 !important;
+}
+
+.pagination-previous, .pagination-next, .pagination-link, .select select {
+  border: none !important;
+}
+
+.select:not(.is-multiple):not(.is-loading)::after, .navbar-link:not(.is-arrowless)::after {
+  border-width: 2px !important;
+}
+
+.input:focus, .taginput .taginput-container.is-focusable:focus,
+.textarea:focus, .select select:focus, .is-focused.input,
+.taginput .is-focused.taginput-container.is-focusable,
+.is-focused.textarea, .select select.is-focused,
+.input:active, .taginput .taginput-container.is-focusable:active,
+.textarea:active, .select select:active,
+.is-active.input, .taginput .is-active.taginput-container.is-focusable,
+.is-active.textarea, .select select.is-active {
+  box-shadow: none !important;
+}
+
+.input.search {
+  width: 290px !important;
+  padding-left: 2.5em !important;
+}
+
+.help {
+  font-weight: 400;
+
+  &.is-invisible {
+    visibility: visible !important;
+  }
+}
+
+.textarea:not([rows]) {
+  min-height: 160px !important;
+}
+
+.datepicker .dropdown-menu {
+  padding-top: 4px;
+  left: -1.2em;
+
+  .dropdown-content {
+    color: #606266;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    font-weight: 400;
+    box-shadow: none;
+  }
+}
+
+.datepicker .datepicker-table .datepicker-body .datepicker-cell.is-today {
+  border: none !important;
+  background-color: #1c00ff0f;
+}
+
+// Mixins
+@mixin fields-list {
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  font-size: .925em !important;
+  font-weight: 500 !important;
+  color: $link !important;
+  font-family: $family-primary;
+  background-color: transparent !important;
+}
+
+// Other
+.card-profile {
+  height: 100%;
+
+  .title {
+    font-size: .9em;
+    letter-spacing: .5px;
+    line-height: 23px !important;
+  }
+
+  .subtitle {
+    padding-top: .25em;
+    font-size: .85em;
+    line-height: 23px !important;
+  }
+}
+
+:focus {
+  outline: none !important;
+}
+
+.avatar {
+  bottom: -60px;
+  left: 45px;
+  position: absolute !important;
+  z-index: 1;
+}
+
+.is-160x160 {
+  width: 160px;
+  height: 160px;
+}
+
+img {
+  object-fit: cover;
+}
+
+.small-rounded {
+  border-radius: 4px;
+}
+
+.has-pointer {
+  cursor: pointer;
+}
+
+.input, .textarea {
+  @include fields-list;
+}
+
+.textarea {
+  resize: none !important;
+}
+
+.context-input {
+  font-size: .925em !important;
+  font-weight: 500 !important;
+  color: $link !important;
+}
+
+i {
+  color: $grey;
+}
+
+hr {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.content-box {
+  position: relative;
+  padding: 2em;
+  background-color: $white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .15), 0 0 1px rgba(0, 0, 0, .08);
+  transition: 200ms;
+
+  &.is-active {
+    color: $primary-invert;
+    background-color: $inp-color;
+  }
+}
+
+.input-active {
+  border-right: .2em solid $blue-light !important;
+}
+
+p, .subtitle, .title {
+  color: $p-color !important;
+}
+
+p, .subtitle {
+  opacity: .7 !important;
+  letter-spacing: .25px !important;
+  line-height: 28px !important;
+}
+
+.button.is-secondary, .button:hover.is-secondary {
+  color: $link !important;
+}
+
+.hero-absolute {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 40%;
+  height: 781px;
+}
+
+.has-background-default {
+  background-color: rgba(191, 193, 255, .1) !important;
+}
+
+.shadow, .card {
+  box-shadow: 0 15px 45px 0 rgba(139, 140, 185, .2) !important;
+}
+
+.small-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .15), 0 0 1px rgba(0, 0, 0, .08) !important;
+}
+
+.card {
+  background-color: #fff;
+}
+
+.btn-shadow {
+  box-shadow: 0 16px 45px 0 rgba(28, 0, 255, .2) !important;
+}
+
+.button.is-primary {
+  transition: background-color 150ms ease-in-out;
+
+  &:hover {
+    background-color: $inp-color !important;
+  }
+
+  &.is-active {
+    background-color: $inp-color !important;
+  }
+}
+
+.button:focus:not(:active), .button.is-focused:not(:active) {
+  box-shadow: none !important;
+}
+
+.has-text-footer {
+  color: #8f8cab;
+}
+
+.brand img {
+  width: 160px;
+}
+
+.brand.absolute {
+  position: absolute;
+  top: 2.5em;
+  right: 2.5em;
+}
+
+.box-auth {
+  padding: .75em 1em .25em;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-right: .2em solid rgba(0, 0, 0, .1);
+}
+
+
+.box-input {
+  padding: .75em 1em .25em;
+  border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.box-social {
+  padding: .75em;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-right: .2em solid rgba(0, 0, 0, .1);
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.box-social:hover {
+  border-right: .2em solid $blue-light !important;
+}
+
+footer {
+  background-color: $p-color;
+}
+
+.media {
+  margin: 0 !important;
+
+  .media {
+      border: none !important;
+  }
+}
+
+.align-cv {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  -webkit-flex-direction: column !important;
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+  -webkit-box-pack: center !important;
+  -webkit-justify-content: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+.is-fixed-top {
+  top: 0;
+  position: fixed;
+}
+
+@for $i from 0 through 8 {
+  .mb-#{$i} {
+    margin-bottom: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 8 {
+  .ml-#{$i} {
+    margin-left: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 8 {
+  .mr-#{$i} {
+    margin-right: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 8 {
+  .my-#{$i} {
+    margin-top: #{$i}rem !important;
+    margin-bottom: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 8 {
+  .px-#{$i} {
+    padding-left: #{$i}rem !important;
+    padding-right: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 8 {
+  .p-#{$i} {
+    padding: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 8 {
+  .py-#{$i} {
+    padding-top: #{$i}rem !important;
+    padding-bottom: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 8 {
+  .pb-#{$i} {
+    padding-bottom: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 8 {
+  .pt-#{$i} {
+    padding-top: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 8 {
+  .pl-#{$i} {
+    padding-left: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 8 {
+  .mt-#{$i} {
+    margin-top: #{$i}rem !important;
+  }
+}
+
+// Import Bulma and Buefy styles
+@import "~bulma/bulma";
+@import "~buefy/src/scss/buefy";
+
+
+// Buefy changes
+.list .list-item {
+  padding: 1rem 1rem 0 !important;
+}
+
+.pagination-link.is-current {
+  background-color: rgba(224, 224, 255, 0.5);
+  color: $grey-darker;
+}
+
+.home .b-tabs .tabs {
+  background-color: white !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.08) !important;
+}
+
+.home .tab-content {
+  padding: 0 !important;
+}
+
+.upload {
+  width: 100% !important;
+
+  .upload-draggable {
+    width: 100% !important;
+  }
+}
+
+.modal {
+  z-index: 2000;
+
+  .button {
+    font-weight: 500 !important;
+
+    &:not(.is-primary):hover {
+      color: $grey-dark;
+    }
+  }
+}
+
+.is-link {
+  color: $black;
+
+  &:hover {
+    color: $grey-darker;
+    text-decoration: underline;
+  }
+}
+
+.dialog .modal-card .modal-card-body.is-titleless, .modal-card-foot {
+  border-radius: 0;
+}
+
+.media-content {
+  font-weight: 600 !important;
+}
+
+.modal-card-foot {
+  border: none;
+  background-color: #fff;
+  padding-top: 0;
+}
+
+.tabs ul {
+  border-bottom-width: 2px;
+  border-bottom-color: #e8e8e8;
+}
+
+.tabs a {
+  border-bottom-width: 2px;
+  margin-bottom: -2px;
+  font-weight: 600;
+  opacity: .75;
+  padding: 1.25em 2em !important;
+
+  &:not(.is-active) {
+    border-bottom-color: transparent;
+  }
+}
+
+.tabs li.is-active a {
+  border-bottom-color: $blue-light;
+  opacity: 1;
+}
+
+.b-tabs .tab-content {
+  padding: 2em;
+}
+
+.b-checkbox.checkbox + .checkbox {
+  margin-left: 0;
+}
+
+.b-checkbox.checkbox .control-label {
+  padding-left: 1em;
+  font-size: 14px;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.b-steps .steps .step-items .step-item .step-details {
+  margin-top: 2.75rem;
+}
+
+.b-steps .steps .step-items .step-item .step-details .step-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.button {
+  border-radius: 0;
+}
+
+.pagination-previous {
+  background-color: transparent !important;
+}
+
+.step-navigation {
+  .pagination-next {
+    background-color: #1c00ff;
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 16px 45px 0 rgba(28, 0, 255, 0.2) !important;
+    border-radius: 0;
+
+    i {
+      color: white !important;
+    }
+  }
+}
+
+// Vue Select styles
+@import "~vue-select/src/scss/vue-select.scss";
+
+// Vue Selector changes
+.vs__dropdown-toggle {
+  @include fields-list;
+  height: 2.5em;
+}
+
+.vs__selected-options {
+  padding: 0;
+}
+
+.vs--open .vs__selected {
+  visibility: hidden;
+}
+
+.vs__clear {
+  display: none;
+}
+
+.vs__open-indicator {
+  fill: rgba(60, 60, 60, 0.4);
+}
+
+.vs__search::placeholder {
+  opacity: .25;
+}
+
+.vs__selected {
+  font-size: .925em;
+  padding: 0;
+  margin: 0;
+}
+
+.vs__dropdown-menu {
+  margin-top: 5px;
+  color: #606266;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  font-weight: 400;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-size: .925em;
+
+  .vs__dropdown-option--highlight {
+    background-color: $blue;
+  }
+}
+
+.is-fullheight {
+  height: 100% !important;
+}
